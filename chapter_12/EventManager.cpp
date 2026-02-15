@@ -1,5 +1,6 @@
 #include "EventManager.h"
 #include "StateManager.h"
+#include <cstring>
 
 EventManager::EventManager()
 	:m_currentState(StateType(0)), m_hasFocus(true)

@@ -1,5 +1,6 @@
 #include "Map.h"
 #include "StateManager.h"
+#include <cmath>
 
 Map::Map(SharedContext* l_context)
 	:m_context(l_context), m_defaultTile(l_context), m_maxMapSize(32, 32), m_playerId(-1)

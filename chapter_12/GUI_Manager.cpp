@@ -67,7 +67,7 @@ void GUI_Manager::HandleClick(EventDetails* l_details){
 	auto state = m_interfaces.find(m_currentState);
 	if (state == m_interfaces.end()){ return; }
 	sf::Vector2i mousePos = m_eventMgr->GetMousePos(m_context->m_wind->GetRenderWindow());
-	for (auto itr = state->second.rbegin(); itr != state->second.rend(); ++itr){
+	for (auto itr = state->second.begin(); itr != state->second.end(); ++itr){
 		if (!itr->second->IsInside(sf::Vector2f(mousePos))){ continue; }
 		if (!itr->second->IsActive()){ return; }
 		itr->second->OnClick(sf::Vector2f(mousePos));
@@ -117,7 +117,7 @@ void GUI_Manager::Update(float l_dT){
 
 	auto state = m_interfaces.find(m_currentState);
 	if (state == m_interfaces.end()){ return; }
-	for (auto itr = state->second.rbegin(); itr != state->second.rend(); ++itr){
+	for (auto itr = state->second.begin(); itr != state->second.end(); ++itr){
 		GUI_Interface* i = itr->second;
 		if (!i->IsActive()){ continue; }
 		i->Update(l_dT);

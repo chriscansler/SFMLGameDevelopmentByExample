@@ -1,5 +1,6 @@
 #pragma once
-#define RUNNING_WINDOWS
+//#define RUNNING_WINDOWS
+#define RUNNING_LINUX
 #include <iostream>
 #include <string>
 #include <algorithm>
