@@ -166,7 +166,7 @@ void EventManager::LoadBindings(){
 	std::string delimiter = ":";
 
 	std::ifstream bindings;
-	bindings.open(Utils::GetWorkingDirectory() + "keys.cfg");
+	bindings.open(Utils::GetResourceDirectory() + "keys.cfg");
 	if (!bindings.is_open()){ std::cout << "! Failed loading keys.cfg." << std::endl; return; }
 	std::string line;
 	while(std::getline(bindings,line)){
@@ -199,8 +199,8 @@ void EventManager::LoadBindings(){
 				char* e = new char[element.length() + 1];
 
 				// Size in bytes is the same as charater length. 1 char = 1B.
-				strcpy_s(w, window.length() + 1, window.c_str());
-				strcpy_s(e, element.length() + 1, element.c_str());
+				strcpy(w, window.c_str());
+				strcpy(e, element.c_str());
 
 				eventInfo.m_gui.m_interface = w;
 				eventInfo.m_gui.m_element = e;

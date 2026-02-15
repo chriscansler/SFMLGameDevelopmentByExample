@@ -193,7 +193,7 @@ bool SoundManager::IsPlaying(const SoundID& l_id){
 }
 
 SoundProps* SoundManager::GetSoundProperties(const std::string& l_soundName){
-	auto& properties = m_properties.find(l_soundName);
+	auto properties = m_properties.find(l_soundName);
 	if (properties == m_properties.end()){
 		if (!LoadProperties(l_soundName)){ return nullptr; }
 		properties = m_properties.find(l_soundName);
